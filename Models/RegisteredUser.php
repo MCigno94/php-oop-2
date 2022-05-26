@@ -9,4 +9,14 @@ class RegisteredUser extends User {
         $this->email = $email;
         $this->psw = $psw;
     }
+
+    function getEmail()
+    {
+        return $this->email;
+    }
+
+    function getPsw()
+    {
+        return $this->psw;
+    }
 }
