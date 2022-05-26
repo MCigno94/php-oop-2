@@ -3,9 +3,9 @@ class Products extends Shop {
     protected $price;
     protected $discount;
     protected $amount;
-    protected $period;
+    protected $period;  //true - ok / false - periodo errato
 
-    public function __construct(String $brandName, String $category, Int $price, Int $discount = 0, Int $amount, $period = true) {
+    public function __construct(String $brandName, String $category, Int $price, Int $discount = 0, Int $amount, $period) {
         parent::_construct($brandName, $category);
         $this->price = $price;
         $this->discount = $discount;
@@ -35,7 +35,7 @@ class Products extends Shop {
 
     public function productAvailability()
     {   if($this->getPeriod() === false) {
-            return 'Il prodotto è diponibile soltanto da Maggio a Giugno';
+            return 'Mi dispiace, il prodotto è diponibile soltanto da Maggio a Giugno';
         }
     }
 
