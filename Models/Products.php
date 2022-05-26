@@ -5,7 +5,7 @@ class Products extends Shop {
     protected $amount;
     protected $period;  //true - ok / false - periodo errato
 
-    public function __construct(String $brandName, String $category, Int $price, Int $discount = 0, Int $amount, $period) {
+    public function __construct(String $brandName, String $category, Int $price, Float $discount = 0, Int $amount, $period) {
         parent::_construct($brandName, $category);
         $this->price = $price;
         $this->discount = $discount;
@@ -39,8 +39,8 @@ class Products extends Shop {
         }
     }
 
-    public function discountPartnership(RegisteredUser $name)
+    public function discountPartnership()
     {
-        $this->discount = 0.2;
+        $this->price = $this->price + ($this->price * $this->discount);
     }
 }
