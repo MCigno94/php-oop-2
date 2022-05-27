@@ -1,5 +1,6 @@
 <?php
 class Products extends Shop {
+    use Identity;
     protected $price;
     protected $amount;
     protected $period;  //true - ok / false - periodo errato

@@ -1,11 +1,12 @@
 <?php
 
 class RegisteredUser extends User {
+    use Identity;
     protected $email;
     protected $psw;
 
-    function __construct(String $firstName, String $lastName, String $address, String $email, String $psw) {
-        parent::__construct($firstName, $lastName, $address);
+    function __construct(Int $number, String $address, String $email, String $psw) {
+        parent::__construct($number, $address);
         $this->email = $email;
         $this->psw = $psw;
     }

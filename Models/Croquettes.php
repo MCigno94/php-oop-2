@@ -1,6 +1,7 @@
 <?php
-class Croquettes extends Products {
 
+class Croquettes extends Products {
+    use Identity;
     protected $description;
     protected $nutrients;
 

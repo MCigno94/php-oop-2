@@ -1,10 +1,11 @@
 <?php
-class User {
 
+class User {
+    use Identity;
     protected $number;
     protected $address;
 
-    function __construct(String $number, String $address) {
+    function __construct(Int $number, String $address) {
         $this->number = $number;
         $this->address = $address;
     }

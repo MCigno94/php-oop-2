@@ -1,4 +1,9 @@
 <?php
+trait Identity
+{
+    public $name;
+
+}
 class Shop {
     protected $category;
     
