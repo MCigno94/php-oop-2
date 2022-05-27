@@ -1,23 +1,17 @@
 <?php
 class User {
-    protected $firstName;
-    protected $lastName;
+
+    protected $number;
     protected $address;
 
-    function __construct(String $firstName, String $lastName, String $address) {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
+    function __construct(String $number, String $address) {
+        $this->number = $number;
         $this->address = $address;
     }
 
-    public function getFirstName()
+    public function getNumber()
     {
-        return $this->firstName;
-    }
-
-    public function getLastName()
-    {
-        return $this->lastName;
+        return $this->number;
     }
 
     public function getAddress()

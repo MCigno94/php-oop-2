@@ -1,14 +1,12 @@
 <?php
 class Products extends Shop {
     protected $price;
-    protected $discount;
     protected $amount;
     protected $period;  //true - ok / false - periodo errato
 
-    function __construct(String $brandName, String $category, Int $price, Float $discount, Int $amount, $period) {
-        parent::__construct($brandName, $category);
+    function __construct(String $category, Int $price, Int $amount, $period) {
+        parent::__construct($category);
         $this->price = $price;
-        $this->discount = $discount;
         $this->amount = $amount;
         $this->period = $period;
 
@@ -18,29 +16,28 @@ class Products extends Shop {
         return $this->price;
     }
 
-    public function getDiscount()
-    {
-        return $this->discount;
-    }
-
+    
     public function getAmount()
     {
         return $this->amount;
     }
-
+    
     public function getPeriod()
     {
         return $this->period;
     }
-
+    
     public function productAvailability()
     {   if($this->getPeriod() === false) {
-            return 'Mi dispiace, il prodotto è diponibile soltanto da Maggio a Giugno';
-        }
+        return 'Mi dispiace, il prodotto è diponibile soltanto da Maggio a Giugno';
+    }
     }
 
-    public function discountPartnership(RegisteredUser $name)
+    public function discountPartnership(RegisteredUser $name, $discount)
     {
-        $this->price = $this->price + ($this->price * $this->discount);
+        if (!is_float($discount)) {
+            throw new Exception('Is not a number');
+          }
+        return $this->price = $this->price - ($this->price * $discount);
     }
 }

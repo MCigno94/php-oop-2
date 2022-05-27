@@ -1,12 +1,12 @@
 <?php
 class CreditCard extends User {
     protected $expiry;
-    protected $number;
+    protected $code;
 
-    function __construct(String $firstName, String $lastName, String $address, $expiry, Int $number) {
+    function __construct(String $number, String $address, $expiry, Int $code) {
         parent::__construct($firstName, $lastName, $address);
         $this->expiry = $expiry;
-        $this->number = $number;
+        $this->code = $code;
     }
 
     public function getExpiry()
@@ -14,9 +14,9 @@ class CreditCard extends User {
         return $this->expiry;
     }
 
-    public function getnumber()
+    public function getCode()
     {
-        return $this->number;
+        return $this->code;
     }
 
     public function paymentConfirmed()

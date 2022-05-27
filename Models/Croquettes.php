@@ -1,10 +1,11 @@
 <?php
 class Croquettes extends Products {
+
     protected $description;
     protected $nutrients;
 
-    function __construct(String $brandName, String $category, Int $price, Float $discount, Int $amount, $period, String $description, String $nutrients) {
-        parent::__construct($brandName, $category, $price, $discount, $amount, $period);
+    function __construct(String $category, Int $price, Int $amount, $period, String $description, Array $nutrients) {
+        parent::__construct($category, $price, $amount, $period);
         $this->description = $description;
         $this->nutrients = $nutrients;
     }

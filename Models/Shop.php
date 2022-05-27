@@ -1,16 +1,9 @@
 <?php
 class Shop {
-    protected $brandName;
     protected $category;
     
-    function __construct(String $brandName, String $category) {
-        $this->brandName = $brandName;
+    function __construct(String $category) {
         $this->category = $category;
-    }
-
-    public function getBrandName()
-    {
-        return $this->brandName;
     }
 
     public function getCategory()
