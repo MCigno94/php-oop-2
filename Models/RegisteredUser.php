@@ -1,21 +1,21 @@
 <?php
 
 class RegisteredUser extends User {
-    private $email;
-    private $psw;
+    protected $email;
+    protected $psw;
 
-    public function __construct(String $firstName, String $lastName, String $address, String $email, String $psw) {
+    function __construct(String $firstName, String $lastName, String $address, String $email, String $psw) {
         parent::_construct($firstName, $lastName, $address);
         $this->email = $email;
         $this->psw = $psw;
     }
 
-    function getEmail()
+    public function getEmail()
     {
         return $this->email;
     }
 
-    function getPsw()
+    public function getPsw()
     {
         return $this->psw;
     }

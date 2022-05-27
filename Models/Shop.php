@@ -3,17 +3,17 @@ class Shop {
     protected $brandName;
     protected $category;
     
-    public function __construct(String $brandName, String $category) {
+    function __construct(String $brandName, String $category) {
         $this->brandName = $brandName;
         $this->category = $category;
     }
 
-    function getBrandName()
+    public function getBrandName()
     {
         return $this->brandName;
     }
 
-    function getCategory()
+    public function getCategory()
     {
         return $this->category;
     }
