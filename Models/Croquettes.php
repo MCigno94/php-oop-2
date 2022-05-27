@@ -4,7 +4,7 @@ class Croquettes extends Products {
     protected $nutrients;
 
     function __construct(String $brandName, String $category, Int $price, Float $discount, Int $amount, $period, String $description, String $nutrients) {
-        parent::_construct($brandName, $category, $price, $discount, $amount, $period);
+        parent::__construct($brandName, $category, $price, $discount, $amount, $period);
         $this->description = $description;
         $this->nutrients = $nutrients;
     }
@@ -24,9 +24,5 @@ class Croquettes extends Products {
         return $this->period = false;
     }
     
-    public function discountPartnership(RegisteredUser $name)
-    {
-        $this->discount = 0.2;
-        $this->price = $this->price + ($this->price * $this->discount);
-    }
+
 }

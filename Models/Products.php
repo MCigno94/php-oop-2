@@ -6,7 +6,7 @@ class Products extends Shop {
     protected $period;  //true - ok / false - periodo errato
 
     function __construct(String $brandName, String $category, Int $price, Float $discount, Int $amount, $period) {
-        parent::_construct($brandName, $category);
+        parent::__construct($brandName, $category);
         $this->price = $price;
         $this->discount = $discount;
         $this->amount = $amount;

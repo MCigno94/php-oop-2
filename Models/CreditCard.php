@@ -4,7 +4,7 @@ class CreditCard extends User {
     protected $number;
 
     function __construct(String $firstName, String $lastName, String $address, $expiry, Int $number) {
-        parent::_construct($firstName, $lastName, $address);
+        parent::__construct($firstName, $lastName, $address);
         $this->expiry = $expiry;
         $this->number = $number;
     }

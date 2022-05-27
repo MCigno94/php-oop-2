@@ -5,7 +5,7 @@ class RegisteredUser extends User {
     protected $psw;
 
     function __construct(String $firstName, String $lastName, String $address, String $email, String $psw) {
-        parent::_construct($firstName, $lastName, $address);
+        parent::__construct($firstName, $lastName, $address);
         $this->email = $email;
         $this->psw = $psw;
     }
